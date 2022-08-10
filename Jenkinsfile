@@ -17,6 +17,8 @@ pipeline {
             steps {
                 sh 'yarn react-native start &'
             }
+        }
+        stage('Run') {
             steps {
                 sh 'npx react-native run-android'
             }
