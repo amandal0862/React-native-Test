@@ -8,8 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                dir('${WORKSPACE}/android') {
-                }
+                bat 'cd android'
                 bat 'dir'
             }
         }
