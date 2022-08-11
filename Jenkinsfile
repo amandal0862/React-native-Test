@@ -8,8 +8,9 @@ pipeline {
         }
         stage('test') {
             steps {
-                bat 'cd android'
-                bat './gradlew clean'
+                dir('${WORKSPACE}/android') {
+                    bat './gradlew clean'
+                }
             }
         }
     }
