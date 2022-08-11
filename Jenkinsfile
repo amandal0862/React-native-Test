@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                bat 'yarn react-native start &'
+                bat 'start "" yarn react-native start &'
             }
         }
         stage('Run') {
