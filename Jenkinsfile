@@ -9,7 +9,7 @@ pipeline {
         stage('test') {
             steps {
                 bat 'cd android'
-                bat './gradlew clean'
+                bat 'ls'
             }
         }
     }
