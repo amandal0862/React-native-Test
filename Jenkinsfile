@@ -1,26 +1,19 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-buster-slim'
-        }
-    }
-    environment {
-        CI = 'true'
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
-                sh 'yarn install'
+                bat 'yarn install'
             }
         }
         stage('test') {
             steps {
-                sh 'yarn react-native start &'
+                bat 'yarn react-native start &'
             }
         }
         stage('Run') {
             steps {
-                sh 'npx react-native run-android'
+                bat 'npx react-native run-android'
             }
         }
     }
