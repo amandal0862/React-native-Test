@@ -11,6 +11,7 @@ pipeline {
                 dir('android') {
                     bat 'dir'
                     bat './gradlew clean'
+                    bat './gradlew assembleRelease'
                 }
             }
         }
