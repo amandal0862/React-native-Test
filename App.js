@@ -80,7 +80,7 @@ const App: () => Node = () => {
           <Section title="Debug">
             <DebugInstructions />
           </Section>
-          <Section title="Learn More">hy Abhishek:</Section>
+          <Section title="Learn More">hello Abhishek:</Section>
           <LearnMoreLinks />
         </View>
       </ScrollView>
