@@ -250,7 +250,7 @@ android {
                 output.versionCodeOverride =
                         defaultConfig.versionCode * 1000 + versionCodes.get(abi)
             }
-            output.outputFileName = "Awsome-Project.apk"
+            output.outputFileName = "Awsome-Project 1.0.apk"
 
         }
     }
