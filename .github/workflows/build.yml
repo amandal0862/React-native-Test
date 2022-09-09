@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install yarn dependencies
+      - name: Install npm dependencies
         run: |
-          yarn install
+          npm install
       - name: Decode Keystore
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
