@@ -11,12 +11,6 @@ jobs:
       - name: Install npm dependencies
         run: |
           npm install
-      - name: Decode Keystore
-        id: decode_keystore
-        uses: timheuer/base64-to-file@v1
-        with:
-          fileName: 'android/metawallet.keystore'
-          encodedString: ${{ secrets.KEYSTORE }}
       - uses: actions/checkout@v2
       - name: Build Android Release
         run: |
