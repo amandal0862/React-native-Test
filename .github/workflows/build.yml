@@ -1,17 +1,24 @@
-name: CBDC-Protonet-android-build-apk
+name: react-native-android-build-apk
 on:
   push:
     branches:
       - main
 jobs:
-  build-android:
+  install-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install npm dependencies
         run: |
           npm install
+  build-android:
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    steps: 
       - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
       - name: Build Android Release
         run: |
           cd android && chmod +x ./gradlew && ./gradlew assembleRelease
