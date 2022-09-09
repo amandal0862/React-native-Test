@@ -14,7 +14,13 @@ jobs:
   build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
-    steps: 
+    steps:
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'android/metawallet.keystore'
+          encodedString: ${{ secrets.KEYSTORE }}
       - uses: actions/checkout@v2
       - name: Install npm dependencies
         run: |
