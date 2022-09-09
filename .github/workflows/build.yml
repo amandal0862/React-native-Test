@@ -1,8 +1,8 @@
-name: react-native-android-build-apk
+name: CBDC-Protonet-android-build-apk
 on:
   push:
     branches:
-      - main
+      - github_workflows
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
@@ -14,11 +14,18 @@ jobs:
   build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - name: Install yarn dependencies
         run: |
-          yarn install
+          yarn install   
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'android/metawallet.keystore'
+          encodedString: ${{ secrets.KEYSTORE }}
+      - uses: actions/checkout@v2
       - name: Build Android Release
         run: |
           cd android && chmod +x ./gradlew && ./gradlew assembleRelease
