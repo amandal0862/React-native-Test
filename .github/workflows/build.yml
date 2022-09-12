@@ -11,11 +11,4 @@ jobs:
       - name: Decode Keystore
         id: decode_keystore
         run: |
-          echo "${{ secrets.RELEASE_KEYSTORE }}" > release.keystore.asc
-          gpg -d --passphrase "${{ secrets.RELEASE_KEYSTORE_PASSPHRASE }}" --batch release.keystore.asc > android/metawallet.keystore
-          pwd
-          ls
-          
-      - name: Build Android Release
-        run: |
-          cd android && ls
+          free -g
