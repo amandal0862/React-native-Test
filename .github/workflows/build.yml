@@ -12,8 +12,8 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'metawallet.keystore'
+          fileDir: 'android/'
           encodedString: ${{ secrets.KEYSTORE }}
-          dir: 'android/'
       - uses: actions/checkout@v2
       - name: Build Android Release
         run: |
