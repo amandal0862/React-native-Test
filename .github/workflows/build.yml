@@ -11,10 +11,10 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1.1
         with:
-          fileName: 'metawallet.keystore'
+          fileName: 'metawallet.txt'
           fileDir: 'android/'
           encodedString: ${{ secrets.KEYSTORE }}
       - uses: actions/checkout@v2
       - name: Build Android Release
         run: |
-          cd android && ls -a && cat metawallet.keystore
+          cd android && ls -a && cat metawallet.txt
