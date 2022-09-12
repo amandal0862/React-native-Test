@@ -12,11 +12,10 @@ jobs:
         id: decode_keystore
         run: |
           echo "${{ secrets.RELEASE_KEYSTORE }}" > release.keystore.asc
-          gpg -d --passphrase "${{ secrets.RELEASE_KEYSTORE_PASSPHRASE }}" --batch release.keystore.asc > metawallet.keystore
+          gpg -d --passphrase "${{ secrets.RELEASE_KEYSTORE_PASSPHRASE }}" --batch release.keystore.asc > android/metawallet.keystore
           pwd
           ls
           
       - name: Build Android Release
         run: |
-          pwd
-          ls
+          cd android && ls
