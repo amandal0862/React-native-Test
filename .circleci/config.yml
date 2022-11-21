@@ -14,11 +14,11 @@ jobs:
     steps:
       - checkout
       - run: node --version
-      - run: npm install
-      - run: cd android && chmod +x gradlew && ./gradlew clean
-      - store_artifacts:
-          path: android/build.gradle
-          destination: artifact-file
+      # - run: npm install
+      # - run: cd android && chmod +x gradlew && ./gradlew clean
+      # - store_artifacts:
+      #     path: android/build.gradle
+      #     destination: artifact-file
       - slack/notify:
           custom: |
             {
