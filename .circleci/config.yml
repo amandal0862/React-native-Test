@@ -18,7 +18,7 @@ jobs:
       - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
       - run: ls android/app/build/outputs/apk/release/
       - store_artifacts:
-          path: android/app/build/outputs/apk/release/Awsome-Project 1.0.1.apk.apk
+          path: android/app/build/outputs/apk/release/Awsome-Project 1.0.1.apk
           destination: artifact-file
       # - slack/notify:
       #    event: fail
