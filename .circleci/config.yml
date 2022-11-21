@@ -16,6 +16,9 @@ jobs:
       - store_artifacts:
           path: android/build.gradle
           destination: artifact-file
+      - slack/notify:
+          branch_pattern: circleci-project-setup 
+          channel: D03N3J9PY3F 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -23,3 +26,6 @@ workflows:
   build-workflow:
     jobs:
       - build
+      
+orbs:
+  slack: circleci/slack@4.4.4
