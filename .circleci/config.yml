@@ -14,9 +14,9 @@ jobs:
     steps:
       - checkout
       - run: node --version
-      - run: npm install
-      - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
-      - run: ls android/app/build/outputs/apk/release/ 
+      # - run: npm install
+      # - run: cd android && chmod +x gradlew && ./gradlew assembleRelease
+      - run: ls /home/circleci/project/android/app
       - store_artifacts:
           path: android/app/build/outputs/apk/release/Awsome-Project 1.0.1.apk.apk
           destination: artifact-file
